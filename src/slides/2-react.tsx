@@ -1,4 +1,4 @@
-import { Box, CodePane, Grid, Heading, Quote, Slide, Stepper, Text } from 'spectacle'
+import { CodePane, Grid, Heading, Quote, Slide, Stepper, Text } from 'spectacle'
 import Span from '../components/Span'
 import { theme } from '../theme'
 
@@ -6,7 +6,7 @@ const WhatReact = () => {
   return (
     <Slide>
       <Heading color="#FFF">What is React?</Heading>
-      <Stepper tagName="div" alwaysVisible values={[1, 2, 3, 4, 5, 6]}>
+      <Stepper tagName="div" alwaysVisible values={[1, 2, 3, 4, 5, 6, 7]}>
         {(_, step, isActive) => isActive && <>
           {step >= 0 && step < 2 && (<>
             <Text textAlign="center">React is a <Span color="#51b6ed">declarative</Span>, <Span color="#db3243">component-based</Span> user interface library created by Meta (Facebook).</Text>
@@ -23,34 +23,37 @@ const WhatReact = () => {
               <Grid gridTemplateColumns="50% 50%" height="100%">
                 <div>
                   {step >= 3 && <>
-                    <h1 className='text-4xl mb-4'>From this (imperative)</h1>
+                    <h1 className='text-4xl mb-4'>From this</h1>
                     <video autoPlay loop src="https://alexsidorenko.com/6d2c5a8c4ff48628b1c86e922cd36375/example-imperative.mp4"></video>
                   </>}
                 </div>
                 <div className='ml-6'>
                   {step >= 4 && <>
-                    <h1 className='text-4xl mb-4'>To this (declarative)</h1>
+                    <h1 className='text-4xl mb-4'>To this</h1>
                     <video autoPlay loop src="https://alexsidorenko.com/1694f57ca8b6e7a770fe6e82ca835fd1/example-declarative-2.mp4"></video>
                   </>}
                 </div>
               </Grid>
             </>)}
           </>)}
-          {step === 5 && (<>
+          {step >= 5 && (<>
             <Text><Span color="#db3243">Component-based</Span> means:</Text>
             <div className='ml-16 mb-8 text-4xl space-y-2'>
               <li>We can separate our logic & UI into several components</li>
               <li>We can reuse the existing components without copy paste the code</li>
             </div>
-            <Box ml="2rem" width="30%">
+            <Grid className="ml-8 mt-16 items-center" gridTemplateColumns="20% 80%">
               <CodePane language="jsx" theme={theme} showLineNumbers={false}>
 {`<App>
   <NavigationBar />
   <Content />
   <Footer />
 </App>`.trim()}
-                </CodePane>
-              </Box>
+              </CodePane>
+              {step >= 6 && (
+                <Text>-&gt; Wait, what is this? HTML?</Text>
+              )}
+            </Grid>
           </>)}
         </>}
       </Stepper>
