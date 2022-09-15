@@ -1,25 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  Deck, FlexBox, Heading, Quote, Slide, Text
+} from 'spectacle';
+import Intro from './slides/1-intro';
+import WhatReact from './slides/2-react';
+import Features from './slides/3-jsx';
+import Component from './slides/4-component';
+import State from './slides/5-state';
+import ReactProps from './slides/6-props';
+
+
+const transition = {
+  from: { opacity: 0 },
+  enter: { opacity: 1 },
+  leave: { opacity: 0 },
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Deck transition={transition}>
+      <Intro />
+      <WhatReact />
+      <Features />
+      <Component />
+      <State />
+      <ReactProps />
+      <Slide>
+        <Heading color="#FFF">Conditional Rendering</Heading>
+      </Slide>
+      <Slide>
+        <FlexBox flexDirection="column" height="100%">
+          <Heading color="#FFF">List and Key in React</Heading>
+        </FlexBox>
+      </Slide>
+      <Slide>
+        <FlexBox flexDirection="column" height="100%">
+          <Heading color="#FFF">Life Cycle Methods in React</Heading>
+        </FlexBox>
+      </Slide>
+    </Deck>
   );
 }
 
