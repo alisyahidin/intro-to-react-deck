@@ -1,5 +1,5 @@
 import {
-  Deck, FlexBox, Heading, Quote, Slide, Text
+  Deck, FlexBox, Heading, Slide
 } from 'spectacle';
 import Intro from './slides/1-intro';
 import WhatReact from './slides/2-react';

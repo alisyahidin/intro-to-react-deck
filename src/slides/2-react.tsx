@@ -1,4 +1,4 @@
-import { Box, CodePane, Grid, Heading, Quote, Slide, Stepper, Text, UnorderedList } from 'spectacle'
+import { Box, CodePane, Grid, Heading, Quote, Slide, Stepper, Text } from 'spectacle'
 import Span from '../components/Span'
 import { theme } from '../theme'
 
